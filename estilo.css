@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap');
+
+/*
+
+Así se escriben los comentario en CSS.
+Siempre se abren con slash asterisco, y
+se cierran con asterisco slash.
+
+*/
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Lato', sans-serif;
+    font-weight:400;
+    color:#373737;
+    background-color:#455A64; /*el primer par es R, segundo es G y tercero es B*/
+}
+
+h1, h2{
+    font-family:'Libre Franklin', monospace;
+    color:#FFFFFF; /* lo básico, para evitar problemas */
+    color:rgba(255,255,255,0.8); /* si el navegador lo entiende, lo usa */
+    text-align:center;
+    letter-spacing:0.1em;
+    font-weight:bolder00;
+}
+
+h1{
+    font-size:3rem;
+}
+
+h2{
+    font-size:2rem;
+    letter-spacing:0.1em;
+}
+
+@media screen and (max-width: 768px){
+    h1{ font-size:2.25rem; }
+    h2{ font-size:1.5rem; }
+}
+
+@media screen and (max-width: 576px){
+    h1{ font-size:1.5rem; }
+    h2{ font-size:1rem; }
+}
+
+h3{
+    display:none;
+}
+
+h5, h6{
+    font-weight:bold00;
+}
+
+a{
+    color:rgb(155,0,0);
+    text-decoration:none;
+}
+
+a:hover{
+    color:rgb(255,0,0);
+    text-decoration:underline;
+}
+
+header{
+    width:100%;
+    top:20%;
+    position: absolute;
+    text-align:center;
+    z-index:9;
+}
+
+@media screen and (orientation: portrait){
+    header{ top:12%; }
+}
+
+video{
+    width:98%;
+    padding:1% 1% .75% 1%;
+    height:auto;
+}
+
+main{
+    width:100%;
+}
+
+/*
+Puedes revisar detalles sobre el siguiente uso de flex
+en https://www.taniarascia.com/easiest-flex-grid-ever/
+*/
+
+#equipo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color:#fff /* lo mismo que #FFFFFF, simplificando pares iguales*/;
+    color:rgba(255,255,255,1);
+}
+
+#equipo a{
+    color:rgba(255,255,255,.7);
+}
+
+#equipo a:hover{
+    color:rgba(255,255,255,.9);
+}
+
+.integrante {
+    flex-basis: 140%;
+}
+
+.integrante:hover {
+    cursor:crosshair;
+}
+
+@media screen and (orientation: landscape){
+    .integrante { flex:2; }
+}
+
+.integrante h4{
+    padding: 2rem 2rem 0.25rem 2rem;
+}
+
+.integrante address{
+    padding: 0.25rem 2rem;
+    font-size:1.0em;
+    font-style:normal;
+}
+
+.integrante blockquote{
+    padding: 6rem 2rem 2rem 2rem;
+}
+
+@media screen and (orientation: landscape){
+    .integrante blockquote{
+        padding: 6rem 2rem 2rem 2rem;
+        max-width:80%;
+    }
+}
+
+.integrante blockquote cite {
+    display:block;
+    font-style: normal;
+    font-weight: normal00;
+    font-size:.9rem;
+    letter-spacing : 0.1rem;
+    padding-top:0.25rem;
+    color:rgba(255,255,255,.75);
+}
+
+.integrante blockquote cite:before {
+    content:"";
+}
+
+.integrante:nth-of-type(1){
+    background-color:#ba68c8;
+    background-image:url('media/integrante_1-01.png');
+    background-position: bottom right;
+    background-size:auto 100%;
+    background-repeat: no-repeat;
+}
+
+
+.integrante:nth-of-type(2){
+    background:#883997;
+    background-image:url('media/integrante_2-02.png');
+    background-position: bottom right;
+    background-size:auto 100%;
+    background-repeat: no-repeat;
+}
+
+.integrante:nth-of-type(1):hover{
+    background-color:#ba68c8;
+    background-image:url('media/integrante_2-01.png');
+    background-position: bottom right;
+    background-size:auto 100%;
+    background-repeat: no-repeat;
+}
+
+.integrante:nth-of-type(2):hover{
+    background:#883997;
+    background-image:url('media/integrante_1-02.png');
+    background-position: bottom right;
+    background-size:auto 100%;
+    background-repeat: no-repeat;
+}
+
+
+/*
+
+AHORA VAMOS POR PORTAFOLIO
+
+*/
+
+#portafolio{
+    width:100%;
+    padding:.20% 0;
+    background:linear-gradient(to bottom, #455a64, #455a64);
+}
+
+.item {
+    width:22%;
+    margin:1%;
+    color:#455A64;
+    background:#b0bec5;
+    box-shadow:0 0 5px rgba(0,0,0,0);
+}
+
+@media screen and (max-width: 768px){
+    .item{
+        width:20%;
+        margin:1%;
+        background:#455A64;
+        color:#455A64;
+    }
+}
+ @media screen and (max-width: 576px){
+     .item{
+         width:96%;
+         margin:2%;
+         background:#455A64;
+         color:#455A64;
+    }
+}
+ .item:hover{
+     cursor:crosshair;
+}
+ .item figure{
+     overflow:hidden;
+}
+ .item figure img{
+     width:100%;
+     height:auto;
+     margin-bottom:8px;
+     filter: grayscale(0);
+}
+ .item:hover figure img{
+     transform:scale(1.5);
+     filter: grayscale(0);
+     transition:all ease-out 5s;
+}
+ .item h4{
+     font-size:1.2em;
+     letter-spacing:0.050em;
+     margin:5% 5% 5% 5%;
+}
+ .item p{
+     font-size:0.9em;
+     letter-spacing:0.05em;
+     margin:5% 2% 6% 5%;
+}
+ footer{
+     width:100%;
+     padding:2.5em 0 2em 0;
+     text-align:center;
+}
+ footer p{
+     text-transform:uppercase;
+     letter-spacing:0.1em;
+     font-size:0.9em;
+}
